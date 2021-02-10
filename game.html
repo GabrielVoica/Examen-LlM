@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="css/game.css" />
+<script src="code/chapter/16_game.js"></script>
+<script src="code/levels.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+
+<body>
+
+  
+  <audio id="audioPlayer" loop="loop"  src="./assets/XTaKeRuX - Destructing Own Kingdom.mp3" autoplay>
+    <p>Audio not working</p>
+  </audio>
+
+  <div class="top-ui">
+    <div class="heart-div">
+      <i class="fas fa-heart fa-2x"></i>
+      <i class="fas fa-heart fa-2x"></i>
+      <i class="fas fa-heart fa-2x"></i>
+      <i class="fas fa-heart fa-2x"></i>
+      <i class="fas fa-heart fa-2x"></i>
+    </div>
+
+    
+  </div>
+
+
+  <div id="lost-screen" class="you-lose-screen">
+     <h1>YOU LOST!</h1>
+    <button onclick="resetGame()" class="restart-game">TRY AGAIN</button>
+  </div>
+
+
+  <div id="win-screen" class="you-win-screen">
+     <h1>YOU WON!!!</h1>
+    <button onclick="resetGame()" class="restart-game">PLAY AGAIN</button>
+  </div>
+
+
+
+
+  <div class="bottom-ui">
+
+    <button id="jump" class="jump-button"><i class="fas fa-angle-double-up fa-5x"></i></button>
+    <button id="left"  class="left-button"><i class="fas fa-angle-double-left fa-5x"></i></button>
+    <button id="right" class="right-button"><i class="fas fa-angle-double-right fa-5x"></i></button>
+  </div>
+
+
+  <button></button>
+
+
+  <div class="intro-story-divs">
+    <div class="div-one">
+      <h1>A hundred years ago, a powerful dragon cursed the whole world</h1>
+
+
+    </div>
+    <div class="div-two">
+      <h1>Everyone ended up being enslaved, corrupted by the dragon's power</h1>
+    </div>
+    <div class="div-three">
+      <h1>The whole world is now covered in a dangerous red goo, that the dragon calls the primordial blood.</h1>
+    </div>
+    <div class="div-four">
+      <h1>Avoid touching that strange red goo, and defead the powerful dragon Kernel to recover your world</h1>
+    </div>
+    <div class="div-five">
+      <h1>Good luck hero</h1>
+    </div>
+  </div>
+
+  <div class="how-toplay-div">
+   
+    <div class="game-howtoplay">
+      <div>
+        <i class="fas fa-heart fa-2x" style="color: red"></i>
+        <h2>You have 5 lives be carefull and try to not lose them</h2>
+        <i class="fas fa-square fa-2x" style="color: rgb(66, 31, 31);"></i>
+        <h2>This guys are Kernel's guards. They will try to kill you, avoid them at all cost!</h2>
+        <i id="close-icon" onclick="removeInfo()" class="fas fa-times fa-2x"></i>
+      </div>
+    </div>
+  </div>
+
+  
+
+</body>
+
+</html>

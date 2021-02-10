@@ -1,0 +1,358 @@
+/* Game styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: black;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.background {
+  background: url(../assets/first-level-background.png);
+  background-size: 50%;
+  table-layout: fixed;
+  border-spacing: 0;
+  opacity: 0.6;
+}
+.background td {
+  padding: 0;
+}
+.lava {
+  background: linear-gradient(90deg, rgb(248, 20, 3), rgb(255, 0, 0));
+}
+.wall {
+  background: url(../assets/wall-back.jpg);
+}
+
+.actor {
+  position: absolute;
+}
+.coin {
+  background: rgb(241, 229, 89);
+}
+.player {
+  background: linear-gradient(rgba(172, 14, 2, 0.747), rgb(0, 0, 0));
+  opacity: 2;
+}
+
+.game {
+  overflow: hidden;
+  max-width: 1400px;
+  max-height: 900px;
+  position: relative;
+}
+
+@media (max-width: 1400px) {
+  .game {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.lost .player {
+  background: rgba(247, 247, 247, 0);
+}
+.won .player {
+  box-shadow: 0px 0px 8px 5px rgb(8, 3, 3), 0px -20px 18px 9px rgb(0, 0, 0);
+}
+
+/* Page styles */
+
+.top-ui {
+  background: black;
+  color: white;
+  top: 0;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.top-ui i {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.heart-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: black;
+}
+
+.heart-div i {
+  color: red;
+}
+
+.heart-div i {
+  margin: 0px 1px;
+}
+
+.bottom-ui {
+  display: none;
+  background: rgb(46, 2, 2);
+  color: white;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 40%;
+}
+
+.bottom-ui button {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: rgb(133, 36, 36);
+  box-shadow: 0px 0px 1px 1px white;
+  color: rgb(32, 11, 11);
+}
+.bottom-ui button i {
+  height: 30%;
+  width: 30%;
+}
+
+.jump-button {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: center;
+}
+
+.left-button {
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: flex-end;
+}
+
+.right-button {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: flex-start;
+}
+
+.intro-story-divs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  z-index: 10;
+}
+
+.enemy {
+  background: rgb(94, 38, 0);
+}
+
+.div-one {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  z-index: 9;
+  animation: animate-divs 8s forwards infinite;
+  position: relative;
+}
+.div-two {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background: black;
+  display: none;
+  z-index: 8;
+  animation: animate-divs 8s forwards infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.div-three {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  display: none;
+  z-index: 7;
+  animation: animate-divs 8s forwards infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.div-four {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  display: none;
+  z-index: 6;
+  animation: animate-divs 8s forwards infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.div-five {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  display: none;
+  z-index: 5;
+  animation: animate-divs 8s forwards infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.how-toplay-div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-howtoplay {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  z-index: 200;
+  background: linear-gradient(rgb(94, 1, 1), rgb(0, 0, 0));
+  
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.game-howtoplay div {
+  font-family: Arial;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: bold;
+  position: relative;
+}
+
+#close-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.you-lose-screen {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -1;
+  top: 0;
+  background: linear-gradient(rgb(255, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 5000;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.you-lose-screen button {
+  height: 100px;
+  width: 200px;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+.you-win-screen {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -1;
+  top: 0;
+  background: rgb(22, 75, 1);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  z-index: 5000;
+}
+
+.you-win-screen button {
+  height: 100px;
+  width: 200px;
+  background: green;
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.game-help {
+  width: 0%;
+  height: 0%;
+}
+
+@media (max-width: 1000px) {
+  .bottom-ui {
+    z-index: 100;
+    grid-template-columns: 33%, 33%, 33%;
+    grid-template-rows: 33%, 33%, 33%;
+  }
+
+  .intro-story-divs h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .intro-story-divs {
+    height: 80%;
+    width: 100%;
+  }
+}
+
+@keyframes animate-divs {
+  0% {
+    top: -30%;
+    color: black;
+  }
+  40% {
+    top: 0%;
+    color: white;
+  }
+  100% {
+    opacity: 0;
+  }
+}
